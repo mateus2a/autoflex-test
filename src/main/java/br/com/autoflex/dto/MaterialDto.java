@@ -1,13 +1,6 @@
-package br.com.autoflex.entity;
+package br.com.autoflex.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
-
-@Entity
-@Table(name = "materials")
-public class Material extends PanacheEntity {
+public class MaterialDto {
   private String name;
   private Double stock;
 

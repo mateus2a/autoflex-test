@@ -12,12 +12,12 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 @ApplicationScoped
 public class ProductService implements PanacheRepository<Product> {
-  public List<Product> listProduct() {
+  public List<Product> index() {
     return Product.listAll();
   }
 
   @Transactional
-  public Product saveProduct(ProductDto dto) {
+  public Product save(ProductDto dto) {
     Product product = new Product();
     product.setName(dto.getName());
     product.setPrice(dto.getPrice());
@@ -28,7 +28,7 @@ public class ProductService implements PanacheRepository<Product> {
   }
 
   @Transactional
-  public Product updateProduct(Long id, ProductDto dto) {
+  public Product update(Long id, ProductDto dto) {
     Product product = new Product();
 
     Optional<Product> productOp = Product.findByIdOptional(id);
@@ -46,7 +46,7 @@ public class ProductService implements PanacheRepository<Product> {
   }
 
   @Transactional
-  public void removeProduct(Long id) {
+  public void remove(Long id) {
 
     Optional<Product> productOp = Product.findByIdOptional(id);
 

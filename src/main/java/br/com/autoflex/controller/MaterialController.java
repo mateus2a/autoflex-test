@@ -14,36 +14,36 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.autoflex.dto.ProductDto;
-import br.com.autoflex.entity.Product;
-import br.com.autoflex.service.ProductService;
+import br.com.autoflex.dto.MaterialDto;
+import br.com.autoflex.entity.Material;
+import br.com.autoflex.service.MaterialService;
 
-@Path("products")
+@Path("materials")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class ProductController {
+public class MaterialController {
   @Inject
-  ProductService service;
+  MaterialService service;
 
   @GET
   public Response index() {
-    List<Product> products = service.index();
-    return Response.ok(products).build();
+    List<Material> materials = service.index();
+    return Response.ok(materials).build();
   }
 
   @POST
-  public Response save(ProductDto dto) {
-    Product product = service.save(dto);
+  public Response save(MaterialDto dto) {
+    Material material = service.save(dto);
 
-    return Response.ok(product).status(Response.Status.CREATED).build();
+    return Response.ok(material).status(Response.Status.CREATED).build();
   }
 
   @PUT
   @Path("{id}")
-  public Response update(@PathParam("id") Long id, ProductDto dto) {
-    Product product = service.update(id, dto);
+  public Response update(@PathParam("id") Long id, MaterialDto dto) {
+    Material material = service.update(id, dto);
 
-    return Response.ok(product).status(Response.Status.CREATED).build();
+    return Response.ok(material).status(Response.Status.CREATED).build();
   }
 
   @DELETE
