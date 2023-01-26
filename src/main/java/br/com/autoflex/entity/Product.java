@@ -1,4 +1,4 @@
-package br.com.autoflex;
+package br.com.autoflex.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
