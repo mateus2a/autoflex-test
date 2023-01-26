@@ -2,7 +2,7 @@ package br.com.autoflex.dto;
 
 public class MaterialDto {
   private String name;
-  private Double stock;
+  private Long stock;
 
   public String getName() {
     return name;
@@ -12,11 +12,11 @@ public class MaterialDto {
     this.name = name;
   }
 
-  public Double getStock() {
+  public Long getStock() {
     return stock;
   }
 
-  public void setStock(Double stock) {
+  public void setStock(Long stock) {
     this.stock = stock;
   }
 }

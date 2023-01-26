@@ -9,7 +9,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "materials")
 public class Material extends PanacheEntity {
   private String name;
-  private Double stock;
+  private Long stock;
 
   public String getName() {
     return name;
@@ -19,11 +19,11 @@ public class Material extends PanacheEntity {
     this.name = name;
   }
 
-  public Double getStock() {
+  public Long getStock() {
     return stock;
   }
 
-  public void setStock(Double stock) {
+  public void setStock(Long stock) {
     this.stock = stock;
   }
 }

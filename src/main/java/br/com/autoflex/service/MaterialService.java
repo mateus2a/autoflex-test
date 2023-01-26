@@ -42,6 +42,8 @@ public class MaterialService implements PanacheRepository<Material> {
     material.setName(dto.getName());
     material.setStock(dto.getStock());
 
+    material.persist();
+
     return material;
   }
 
